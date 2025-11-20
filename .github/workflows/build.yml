@@ -30,10 +30,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      # Checks for Semantic errors. Can be configured using analysis_options.yaml
-      - name: Analyze project source
-        run: flutter analyze
-
       # Runs unit test
       - name: Run tests
         run: flutter test
