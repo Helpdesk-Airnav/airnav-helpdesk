@@ -20,7 +20,7 @@ class RequestCard extends StatelessWidget {
       elevation: 0,
       margin: EdgeInsets.zero,
       child: InkWell(
-        onTap: () => Get.toNamed(Routes.DASHBOARD_DETAIL, arguments: request),
+        onTap: () => Get.toNamed(Routes.TICKET_DETAIL, arguments: request),
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(
