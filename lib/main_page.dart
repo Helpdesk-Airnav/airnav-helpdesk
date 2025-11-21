@@ -1,3 +1,5 @@
+import 'package:airnav_helpdesk/modules/ticket/add_ticket_page.dart';
+import 'package:airnav_helpdesk/modules/ticket/detail/detail_ticket_page.dart';
 import 'package:airnav_helpdesk/placeholder_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
@@ -12,7 +14,8 @@ class MainPage extends GetView<MainController> {
   List<Widget> _screens() => [
     const APage(),
     const BPage(),
-    DashboardPage()
+    DashboardPage(),
+    AddTicketPage()
   ];
 
   List<PersistentBottomNavBarItem> _items() => [
@@ -27,6 +30,10 @@ class MainPage extends GetView<MainController> {
     PersistentBottomNavBarItem(
       icon: const Icon(Icons.dashboard),
       title: 'Dashboard',
+    ),
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.details),
+      title: 'Add Ticket',
     ),
   ];
 
