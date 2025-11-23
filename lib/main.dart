@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'core/theme/app_theme.dart';
+import 'l10n/app_localizations.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,26 +18,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ShadApp.custom(
-      appBuilder: (context) {
-        return GetMaterialApp(
-          title: 'Helpdesk',
-          initialRoute: AppPages.INITIAL,
-          getPages: AppPages.routes,
-          theme: Theme.of(context),
-          builder: (context, child) {
-            return ShadAppBuilder(child: child!);
-          },
-        );
-      },
-      theme: ShadThemeData(
-        brightness: Brightness.light,
-        colorScheme: const ShadZincColorScheme.light(),
-      ),
-      darkTheme: ShadThemeData(
-        brightness: Brightness.dark,
-        colorScheme: const ShadZincColorScheme.dark(),
-      ),
+    return GetMaterialApp(
+      title:'Helpdesk',
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      theme: AppTheme.lightTheme,
     );
   }
 }

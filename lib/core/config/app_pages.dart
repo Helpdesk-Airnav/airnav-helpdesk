@@ -1,4 +1,4 @@
-import 'package:airnav_helpdesk/modules/dashboard/dashboard_binding.dart';
+import 'package:airnav_helpdesk/modules/ticket/ticket_binding.dart';
 import 'package:get/get.dart';
 
 import '../../main_binding.dart';
@@ -10,10 +10,7 @@ import '../../modules/ticket/add_ticket_binding.dart';
 import '../../modules/ticket/add_ticket_page.dart';
 import '../../modules/ticket/detail/detail_ticket_binding.dart';
 import '../../modules/ticket/detail/detail_ticket_page.dart';
-import '../../modules/onboarding/onboarding_page.dart';
-import '../../modules/login/login_page.dart';
-import '../../modules/chatbot/chatbot_binding.dart';
-import '../../modules/chatbot/chatbot_page.dart';
+import '../../modules/ticket/ticket_page.dart';
 
 part 'app_routes.dart';
 
@@ -37,6 +34,11 @@ class AppPages {
       name: _Path.TICKET_DETAIL,
       page: () => const DetailTicketPage(),
       binding: DetailTicketBinding(),
+    ),
+    GetPage(
+      name: _Path.TICKET,
+      page: () => const TicketPage(),
+      binding: TicketBinding(),
     ),
     GetPage(
       name: _Path.ADD_TICKET,
